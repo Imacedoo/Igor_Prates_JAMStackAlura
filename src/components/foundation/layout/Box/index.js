@@ -1,13 +1,17 @@
 import styled from 'styled-components';
-import propToStyle from '../../../theme/utils/propToStyle';
+import get from 'lodash/get';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
 export default styled.div`
   ${propToStyle('display')}
   ${propToStyle('flexDirection')}
   ${propToStyle('justifyContent')}
+  ${propToStyle('alignItems')}
   ${propToStyle('flex')}
   ${propToStyle('display')}
   ${propToStyle('flexWrap')}
-  ${propToStyle('backgroundColor')}
   ${propToStyle('height')}
+  ${propToStyle('margin')}
+  ${propToStyle('width')}
+  background-color: ${(props) => get(props.theme, `colors.${props.variant}.color`)};
 `;

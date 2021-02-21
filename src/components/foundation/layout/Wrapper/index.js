@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../../theme/utils/propToStyle';
 
 export default styled.section`
   justify-content: center;
@@ -11,6 +12,7 @@ export default styled.section`
   margin-right: auto;
   margin-left: auto;
   max-width: initial;
+  ${propToStyle('flexWrap')}
   ${breakpointsMedia({
     sm: css`
           max-width: 576px; 
@@ -18,7 +20,7 @@ export default styled.section`
     md: css`
           max-width: 768px;
           padding-right: 16px;
-          padding-left: 16px; 
+          padding-left: 16px;
         `,
     lg: css`
           max-width: 1160px; 
@@ -26,5 +28,5 @@ export default styled.section`
     xl: css`
           max-width: 1222px;
         `,
-  })}
+  })};
 `;
