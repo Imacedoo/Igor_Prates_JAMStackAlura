@@ -25,5 +25,7 @@ jobs:
           node-version: '14.16.0'
 
       # Runs a single command using the runners shell
-      - name: Rodando o linter
+      - name: Install dependencies
+        run: npm install
+      - name: Run eslint
         run: npm run lint
