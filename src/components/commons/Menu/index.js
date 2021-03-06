@@ -13,17 +13,21 @@ export default function Menu() {
       </MenuWrapper.LeftSide>
       <MenuWrapper.RighSideDesktop>
         <Link href="/">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a style={{ fontSize: '25px' }}><FaHome /></a>
         </Link>
         <Link href="/sobre-mim">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a>Sobre mim</a>
         </Link>
         <Link href="/sobre-mim">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a>Contatos</a>
         </Link>
         <Button variant="primary.main" margin="20px">Portfólio</Button>
       </MenuWrapper.RighSideDesktop>
       <MenuWrapper.RighSideMobile>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a href="#">
           <FaBars />
         </a>

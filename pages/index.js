@@ -123,6 +123,7 @@ export default function Home() {
             order={{ xs: 3, md: 3 }}
           >
             <Link href="/sobre-mim">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a
                 style={{
                   fontFamily: "'Press Start 2P', cursive",

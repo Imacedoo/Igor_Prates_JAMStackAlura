@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaArrowRight, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import {
+  FaArrowRight, FaGithub, FaInstagram, FaLinkedin, FaRegCommentDots,
+} from 'react-icons/fa';
 import Link from '../src/components/navigation/Link';
 import Menu from '../src/components/commons/Menu';
 import Box from '../src/components/foundation/layout/Box';
@@ -8,6 +10,8 @@ import Card from '../src/components/foundation/layout/Card';
 import Wrapper from '../src/components/foundation/layout/Wrapper';
 import Footer from '../src/components/commons/Footer';
 import Module from '../src/components/foundation/layout/Module';
+import Modal from '../src/components/commons/Modal';
+import FormMessage from '../src/components/patterns/FormMensagem';
 
 const icons = {
   Linkedin: <FaLinkedin />,
@@ -38,6 +42,8 @@ export const contatcts = [
 ];
 
 export default function SobreMim() {
+  const [isModalOpen, setModalState] = React.useState(false);
+
   return (
     <Box
       tag="div"
@@ -47,6 +53,20 @@ export default function SobreMim() {
       justifyContent="space-between"
       flexWrap="wrap"
     >
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setModalState(false);
+        }}
+      >
+        {(propsDoModal) => (
+          <FormMessage
+            onClose={() => setModalState(false)}
+            propsDoModal={propsDoModal}
+          />
+        )}
+      </Modal>
+
       <Menu />
 
       <Wrapper>
@@ -135,6 +155,7 @@ export default function SobreMim() {
                 <Module
                   key={contact.type}
                   width="300px"
+                  height="66px"
                   display="block"
                 >
                   <Text
@@ -157,19 +178,45 @@ export default function SobreMim() {
               <Module
                 key={contact.type}
                 width="300px"
+                height="66px"
                 display="block"
               >
                 <Text
                   variant="paragraph1"
                   tag="p"
                   color="secondary"
-                  textAlign="left"
+                  textAlign="center"
+                  lineHeight="2.15"
                 >
                   {contact.text}
                 </Text>
               </Module>
             );
           })}
+
+          <Module
+            width="300px"
+            display="block"
+            height="66px"
+          >
+            <p>
+              <Text
+                variant="paragraph1"
+                tag="a"
+                color="secondary"
+                textAlign="left"
+                href="#"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setModalState(!isModalOpen);
+                }}
+              >
+                <FaRegCommentDots />
+                {' '}
+                Envie-me uma mensagem
+              </Text>
+            </p>
+          </Module>
         </Box>
       </Wrapper>
 
