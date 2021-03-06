@@ -51,6 +51,7 @@ const TextBase = styled.span`
   ${(props) => TextStyleVariantMap[props.variant]};
   ${propToStyle('textAlign')};
   ${propToStyle('width')};
+  ${propToStyle('lineHeight')};
   ${(props) => TextColors[props.color]};
 `;
 

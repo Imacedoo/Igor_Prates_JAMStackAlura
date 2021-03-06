@@ -8,6 +8,7 @@ export default styled.div`
   margin: 10px auto;
   ${propToStyle('width')};
   ${propToStyle('display')};
+  ${propToStyle('height')};
   
   a {
     color: ${({ theme }) => theme.colors.secondary.main.color};

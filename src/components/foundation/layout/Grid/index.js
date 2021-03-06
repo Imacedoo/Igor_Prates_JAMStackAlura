@@ -27,13 +27,15 @@ export default {
       `,
   })}
 
-    ${propToStyle('marginTop')}
+    ${propToStyle('marginTop')};
   `,
   Row: styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-right: -16px;
     margin-left: -16px;
+    ${propToStyle('margin')};
+    ${propToStyle('width')};
   `,
   Col: styled.div`
     padding-right: 16px;
@@ -93,7 +95,7 @@ export default {
           ;
           ` : '',
     });
-  }}
+  }};
 
     ${({ order }) => {
     if (typeof order === 'number') {
@@ -117,12 +119,12 @@ export default {
           ;
           ` : '',
     });
-  }}
+  }};
     
-    ${propToStyle('display')}
-    ${propToStyle('alignItems')}
-    ${propToStyle('justifyContent')}
-    ${propToStyle('flexDirection')}
-    ${propToStyle('marginBottom')}
+    ${propToStyle('display')};
+    ${propToStyle('alignItems')};
+    ${propToStyle('justifyContent')};
+    ${propToStyle('flexDirection')};
+    ${propToStyle('marginBottom')};
   `,
 };

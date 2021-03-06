@@ -31,13 +31,13 @@ export default function Card({ srcImage, title, description }) {
           { title }
         </Text>
         <Text
-          tag="paragraph1"
+          tag="p"
           variant="TitleXS"
           color="secondary"
         >
           { description }
         </Text>
-        <div style={{ margin: '45px 0 0 0', float: 'right' }}>
+        <div style={{ margin: '0', float: 'right' }}>
           <Link href="/saiba-mais">
             <Text
               color="primary"
